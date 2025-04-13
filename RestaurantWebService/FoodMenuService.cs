@@ -14,11 +14,11 @@ namespace FoodDeliveryApp.RestaurantWebService
         public List<FoodMenuModel> getAllFoodMenu(string restaurantId)
         {
             List<FoodMenuModel> foodMenu = new List<FoodMenuModel>();
-            foodMenu.Add(new FoodMenuModel { RestaurantId = "001", FoodId = "001", Cuisine = "Indian", FoodName = "Chicken Biryani" , Rating = 5, Rate = 250});
-            foodMenu.Add(new FoodMenuModel { RestaurantId = "001", FoodId = "002", Cuisine = "Indian", FoodName = "Chicken Korma", Rating = 4, Rate = 300 });
-            foodMenu.Add(new FoodMenuModel { RestaurantId = "001", FoodId = "003", Cuisine = "Indian", FoodName = "Shahi Paneer", Rating = 5, Rate = 250 });
-            foodMenu.Add(new FoodMenuModel { RestaurantId = "001", FoodId = "004", Cuisine = "Indian", FoodName = "Tandoori Roti", Rating = 3, Rate = 250 });
-            foodMenu.Add(new FoodMenuModel { RestaurantId = "001", FoodId = "005", Cuisine = "Indian", FoodName = "Choley Bhaturey", Rating = 5, Rate = 100 });
+            foodMenu.Add(new FoodMenuModel { RestaurantId = "001", FoodId = "001", Cuisine = "Pakistani", FoodName = "Chicken Biryani" , Rating = 5, Rate = 250});
+            foodMenu.Add(new FoodMenuModel { RestaurantId = "001", FoodId = "002", Cuisine = "Pakistani", FoodName = "Chicken Korma", Rating = 4, Rate = 300 });
+            foodMenu.Add(new FoodMenuModel { RestaurantId = "001", FoodId = "003", Cuisine = "Pakistani", FoodName = "Shahi Paneer", Rating = 5, Rate = 250 });
+            foodMenu.Add(new FoodMenuModel { RestaurantId = "001", FoodId = "004", Cuisine = "Pakistani", FoodName = "Tandoori Roti", Rating = 3, Rate = 250 });
+            foodMenu.Add(new FoodMenuModel { RestaurantId = "001", FoodId = "005", Cuisine = "Pakistani", FoodName = "Choley Bhaturey", Rating = 5, Rate = 100 });
 
             return foodMenu;
         }

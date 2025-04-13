@@ -13,7 +13,7 @@ namespace FoodDeliveryApp
 
             //User Searches Restaurant.
             RestaurantSearchDriver restaurantSearchDriver = new RestaurantSearchDriver();
-            var restaurantId = restaurantSearchDriver.RestaurantSearch();
+            var (location, restaurantId) = restaurantSearchDriver.RestaurantSearch();
 
             #endregion
 
@@ -37,7 +37,7 @@ namespace FoodDeliveryApp
 
             //Calling Meal Builder
             MealBuilderDriver mealBuilderDriver = new MealBuilderDriver();
-            var totalCost = mealBuilderDriver.BuildMealForUser(selectedMealItems);
+            var totalCost = mealBuilderDriver.BuildMealForUser(selectedMealItems, location);
 
             #endregion
 

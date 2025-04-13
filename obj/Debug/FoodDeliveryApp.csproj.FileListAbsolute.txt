@@ -17,3 +17,10 @@ C:\Users\Administrator\Source\Repos\FoodDelivery\obj\Debug\FoodDeliveryApp.cspro
 C:\Users\Administrator\Source\Repos\FoodDelivery\obj\Debug\FoodDeliveryApp.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Source\Repos\FoodDelivery\obj\Debug\FoodDeliveryApp.exe
 C:\Users\Administrator\Source\Repos\FoodDelivery\obj\Debug\FoodDeliveryApp.pdb
+C:\Users\Aun Muhammad\Downloads\DP\NED\FoodDelivery\obj\Debug\FoodDeliveryApp.csproj.AssemblyReference.cache
+C:\Users\Aun Muhammad\Downloads\DP\NED\FoodDelivery\obj\Debug\FoodDeliveryApp.csproj.CoreCompileInputs.cache
+C:\Users\Aun Muhammad\Downloads\DP\NED\FoodDelivery\obj\Debug\FoodDeliveryApp.exe
+C:\Users\Aun Muhammad\Downloads\DP\NED\FoodDelivery\obj\Debug\FoodDeliveryApp.pdb
+C:\Users\Aun Muhammad\Downloads\DP\NED\FoodDelivery\bin\Debug\FoodDeliveryApp.exe.config
+C:\Users\Aun Muhammad\Downloads\DP\NED\FoodDelivery\bin\Debug\FoodDeliveryApp.exe
+C:\Users\Aun Muhammad\Downloads\DP\NED\FoodDelivery\bin\Debug\FoodDeliveryApp.pdb

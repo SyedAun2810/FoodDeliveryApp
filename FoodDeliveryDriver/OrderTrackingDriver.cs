@@ -1,43 +1,51 @@
 ﻿using FoodDeliveryApp.FoodDeliveryAppModel;
 using FoodDeliveryApp.Tracking;
-using System;
 using System.Threading;
+using System;
 
 namespace FoodDeliveryApp.FoodDeliveryDriver
 {
     public class OrderTrackingDriver
     {
-        /// <summary>
-        /// This Driver used Observer Design Pattern
-        /// </summary>
-        /// <param name="restaurantId"></param>
-        /// <param name="orderId"></param>
-        /// <param name="user"></param>
-        /// <param name="cancel"></param>
+        private IOrderState currentState;
+        public IOrderState PreviousState { get; private set; }
+
+        public OrderTrackingDriver()
+        {
+            currentState = new OrderReceivedState();
+            PreviousState = null;
+        }
+
+        public void SetState(IOrderState state)
+        {
+            PreviousState = currentState; // Track the previous state
+            currentState = state;
+        }
+
         public void OrderTrackingByUser(string restaurantId, string orderId, UserModel user, char cancel)
         {
+            //Order Tracking.
             if (cancel != 'y')
             {
                 Console.WriteLine(string.Empty);
                 Console.WriteLine("Food Delivery Status");
                 Console.WriteLine("---------------------");
 
-                Restaurant restaurant = new Restaurant(restaurantId, orderId, "Order Received");
-                Customers customer = new Customers(user);
-                restaurant.Attach(customer);
+                Restaurant restaurant = new Restaurant(restaurantId, orderId, new  OrderReceivedState());
+                restaurant.Attach(new Customers(user));
 
-                Thread.Sleep(1000);
-                restaurant.UpdateDeliveryStatus("Dispatched", "30 minutes");
-                Thread.Sleep(1000);
-                restaurant.UpdateDeliveryStatus("On the way", "25 minutes");
-                Thread.Sleep(1000);
-                restaurant.UpdateDeliveryStatus("Near to your home", "5 minutes");
-                restaurant.UpdateDeliveryStatus("Delivered", "0 minutes");
-
-                restaurant.Detach(customer);
+                while (currentState != null)
+                {
+                    if (currentState != null) restaurant.DeliveryStatus = currentState;
+                    if (currentState != null)
+                    {
+                        currentState.Handle(this); // Trigger the next state's behavior
+                    }
+                }
             }
 
             Console.ReadKey();
         }
     }
+
 }

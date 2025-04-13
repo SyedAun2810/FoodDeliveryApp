@@ -28,7 +28,7 @@ namespace FoodDeliveryApp.RestaurantFoodMenu
             foodMenu = new FoodMenu(restaurantId);
             var foodMenuItems = foodMenu.GetFoodMenuItems();
             var filteredFoodMenuItems = foodMenuItems.Where(filterCriteria).ToList();
-            PrintFoodMenu(new RestaurantFoodMenuIterator(filteredFoodMenuItems));
+            PrintFoodMenu(new FilterFoodMenuIterator(filteredFoodMenuItems));
             return filteredFoodMenuItems;
         }
 

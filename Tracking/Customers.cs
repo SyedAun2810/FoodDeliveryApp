@@ -21,18 +21,17 @@ namespace FoodDeliveryApp.Tracking
         public void Update(FoodDelivery foodDelivery)
         {
             Console.WriteLine("Notified Restaurant ID {0} of Order ID {1}'s Food Delivery Status: {2}",
-                foodDelivery.RestaurantId, foodDelivery.OrderId, foodDelivery.DeliveryStatus);
+                foodDelivery.RestaurantId, foodDelivery.OrderId, foodDelivery.DeliveryStatus.GetType().Name);
             Console.WriteLine("Date Time: {0}", foodDelivery.DeliveryTime);
         }
 
         public void UpdateDetailed(FoodDelivery foodDelivery, string estimatedDeliveryTime)
         {
             Console.WriteLine("Notified Restaurant ID {0} of Order ID {1}'s Food Delivery Status: {2}",
-                foodDelivery.RestaurantId, foodDelivery.OrderId, foodDelivery.DeliveryStatus);
+                foodDelivery.RestaurantId, foodDelivery.OrderId, foodDelivery.DeliveryStatus.GetType().Name);
             Console.WriteLine("Date Time: {0}", foodDelivery.DeliveryTime);
             Console.WriteLine("Estimated Delivery Time: {0}", estimatedDeliveryTime);
         }
-
         #endregion
     }
 }

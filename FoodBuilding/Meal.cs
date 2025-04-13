@@ -12,8 +12,8 @@ namespace FoodDeliveryApp.Ordering
         public void AddFoodItem(List<FoodMenuModel> items)
         {
             foodItems.AddRange(items);
-        }
 
+        }
         public void SetSpecialInstructions(string instructions)
         {
             specialInstructions = instructions;

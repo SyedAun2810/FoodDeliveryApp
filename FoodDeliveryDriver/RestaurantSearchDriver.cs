@@ -9,7 +9,7 @@ namespace FoodDeliveryApp.RestaurantSearch
     /// </summary>
     public class RestaurantSearchDriver
     {
-        public string RestaurantSearch()
+        public (string Location, string RestaurantId) RestaurantSearch()
         {
             InterpreterContext context = new InterpreterContext("Some API");
             RestaurantSearchClient client = new RestaurantSearchClient(context);
@@ -49,7 +49,7 @@ namespace FoodDeliveryApp.RestaurantSearch
                  restaurantId = Console.ReadLine();
             }
 
-            return restaurantId;
+            return (location, restaurantId); ;
         }
     }
 }

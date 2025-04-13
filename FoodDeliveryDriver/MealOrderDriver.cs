@@ -47,36 +47,6 @@ namespace FoodDeliveryApp.FoodDeliveryDriver
                 Console.WriteLine(string.Empty);
             }
 
-            //Order Update
-            char update = 'n';
-            if (!string.IsNullOrEmpty(orderId))
-            {
-                Console.WriteLine("Do you want to update order(y/n)...?");
-                update = Console.ReadKey().KeyChar;
-                Console.WriteLine(string.Empty);
-
-                if (update == 'y')
-                {
-                    Console.WriteLine(String.Empty);
-                    Food food = new Food();
-                    UpdateFoodOrder updateOrder = new UpdateFoodOrder(food);
-                    updateOrder.OrderId = orderId;
-
-                    Console.WriteLine("Enter Updated Customer Name:");
-                    updateOrder.UpdatedUser.UserName = Console.ReadLine();
-                    Console.WriteLine("Enter Updated Mobile Number:");
-                    updateOrder.UpdatedUser.PhoneNumber = Console.ReadLine();
-                    Console.WriteLine("Enter Updated Address:");
-                    updateOrder.UpdatedUser.Address = Console.ReadLine();
-                    Console.WriteLine("Enter Updated Amount:");
-                    updateOrder.UpdatedUser.Amount = Convert.ToDouble(Console.ReadLine());
-
-                    Customer customer = new Customer();
-                    customer.TakeOrder(updateOrder);
-                    customer.PlaceOrders();
-                }
-            }
-
             //Order Cancellation.
             char cancel = 'n';
             if (!string.IsNullOrEmpty(orderId))

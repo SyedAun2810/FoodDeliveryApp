@@ -27,11 +27,5 @@ namespace FoodDeliveryApp.RestaurantFoodMenu
             var foodMenuItems = GetFoodMenuItems();
             return new RestaurantFoodMenuIterator(foodMenuItems);
         }
-
-        public IFilteredIterator CreateFilteredFoodMenuIterator()
-        {
-            var foodMenuItems = GetFoodMenuItems();
-            return new FilteredFoodMenuIterator(foodMenuItems);
-        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using FoodDeliveryApp.FoodDeliveryDriver;
 
 namespace FoodDeliveryApp.Tracking
 {
@@ -13,8 +14,8 @@ namespace FoodDeliveryApp.Tracking
 
         public string RestaurantId { get; set; }
 
-        private string deliveryStatus;
-        public string DeliveryStatus
+        private IOrderState deliveryStatus;
+        public IOrderState DeliveryStatus
         {
             get { return deliveryStatus; }
             set
@@ -36,7 +37,7 @@ namespace FoodDeliveryApp.Tracking
 
         #region Constructor
 
-        protected FoodDelivery(string restaurantId, string orderId, string deliveryStatus)
+        protected FoodDelivery(string restaurantId, string orderId, IOrderState deliveryStatus)
         {
             this.RestaurantId = restaurantId;
             this.OrderId = orderId;
@@ -78,5 +79,6 @@ namespace FoodDeliveryApp.Tracking
         }
 
         #endregion
+
     }
 }

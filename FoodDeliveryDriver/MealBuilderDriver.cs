@@ -13,7 +13,7 @@ namespace FoodDeliveryApp.FoodDeliveryDriver
         /// </summary>
         /// <param name="selectedMealItems">List of selected food items for the meal</param>
         /// <returns>Total cost of the meal including tax</returns>
-        public double BuildMealForUser(List<FoodMenuModel> selectedMealItems)
+        public double BuildMealForUser(List<FoodMenuModel> selectedMealItems, string location)
         {
             Console.WriteLine();
             Console.WriteLine("You selected the following meal items:");
@@ -29,7 +29,11 @@ namespace FoodDeliveryApp.FoodDeliveryDriver
             double foodCost = meal.GetCost();
 
             // Calculate tax
-            var taxCalculationContext = new TaxCalculationContext(new OneStarTaxCalculator());
+            ITaxCalculator taxCalculator = location == "Karachi"
+                ? (ITaxCalculator)new TwoStarTaxCalculator()
+                : (ITaxCalculator)new OneStarTaxCalculator();
+
+            var taxCalculationContext = new TaxCalculationContext(taxCalculator);
             var taxAmount = taxCalculationContext.GetCalculatedTax(foodCost, 0.05, false);
             var totalCostOfFood = foodCost + taxAmount;
 
